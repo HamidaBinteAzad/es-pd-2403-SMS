@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Create Page</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1><a href="{% url 'home' %}">SMS</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'create_profile' %}">Create Profile</a></li>
+          <li><a class="nav-link scrollto" href="#services">Login</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact With Us</a></li>
+          <li><a class="getstarted scrollto" href="#about">Add Students</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <form method="post" enctype="multipart/form-data" action="{% url 'create_profile' %}">
+        {% csrf_token %}
+        <br><br><br><br>
+
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Image</label>
+          <input type="file" name="image" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Mother Name</label>
+          <input type="text" name="mother_name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Father Name</label>
+          <input type="text" name="father_name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Religion</label>
+          <select name="religion" class="form-control">
+            <option value="">Select Religion</option>
+            <option value="Islam">Islam</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Christian">Christian</option>
+            <option value="Buddho">Buddho</option>
+            <option value="Atheist">Atheist</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Gender</label>
+          <select name="gender" class="form-control" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Date of Birth</label>
+          <input type="date" name="date_of_birth" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Roll</label>
+          <input type="number" name="roll" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">City</label>
+          <input type="text" name="city" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-check-label">
+            <input type="checkbox" name="is_Bangladeshi" class="form-check-input"> Is Bangladeshi?
+          </label>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Age</label>
+          <input type="number" name="age" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Result</label>
+          <input type="number" name="result" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Hobby</label>
+          <input type="text" name="hobby" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Subjects</label>
+          <input type="text" name="subjects" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

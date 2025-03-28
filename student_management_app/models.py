@@ -47,7 +47,7 @@ class Student(models.Model):
     father_name    = models.CharField(max_length=50)
     religion       = models.CharField(choices=RELIGION, max_length=10)
     gender         = models.CharField(choices=GENDER, max_length=10)
-    date_of_birth  = models.DateField()
+    date_of_birth  = models.TextField()
     roll           = models.IntegerField()
     city           = models.CharField(max_length=100)
     is_Bangladeshi = models.BooleanField(default=False)
